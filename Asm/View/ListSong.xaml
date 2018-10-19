@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="Asm.View.ListSong"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Asm.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:entity="using:Asm.Entity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/imageLaster.jpg" Opacity="0.8"/>
+        </Grid.Background>
+        <Pivot>
+            <Pivot.Title>
+                <TextBlock Text="Danh sách bài hát của bạn" FontSize="20"/>
+            </Pivot.Title>
+            <PivotItem>
+                <Grid Margin="0,-37,0,-0.333">
+                    <ListView ItemsSource="{x:Bind ArrayListSong, Mode=TwoWay}"  x:Name="MyListSong">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="entity:Song">
+                                <StackPanel Padding="12" Tag="{Binding}" Orientation="Horizontal" Margin="0 0 20 0" Tapped="Click_MySong">
+                                    <Ellipse Width="77" Height="77">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="{x:Bind thumbnail}"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <StackPanel>
+                                        <TextBlock Text="{x:Bind name}" VerticalAlignment="Center" 
+                                               Style="{ThemeResource BaseTextBlockStyle}"
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"/>
+                                        <TextBlock Text="{x:Bind singer}" VerticalAlignment="Center"
+                                               Style="{ThemeResource BaseTextBlockStyle}"
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"
+                                               Margin="0 7 0 0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Background="#FFDEDEDE" Height="25" Margin="0,0,0,44">
+            <TextBlock>
+                Now Playing:
+            </TextBlock>
+            <TextBlock x:Name="NowPlaying" Margin="10,0,0,0">
+            </TextBlock>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Background="#FFDEDEDE" Height="45">
+            <AppBarSeparator/>
+            <TextBlock x:Name="MinDuration" Margin="0 12 5 0"/>
+            <Slider x:Name="Progress" Height="15" Width="320"/>
+            <TextBlock x:Name="MaxDuration" Margin="5 12 0 0"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Previous" Click="PlayBack" ToolTipService.ToolTip="Previous Song"/>
+            <AppBarButton Icon="Play" Click="PlayClick" ToolTipService.ToolTip="Play/Pause Song" x:Name="PlayButton"/>
+            <AppBarButton Icon="Next" Click="PlayNext" ToolTipService.ToolTip="Next Song"/>
+            <AppBarSeparator/>
+            <Slider x:Name="VolumeSlider" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" ValueChanged="VolumeSlider_ValueChanged" ToolTipService.ToolTip="Volume"/>
+            <TextBlock x:Name="volume" Width="28" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextAlignment="Right">
+                100
+            </TextBlock>
+            <TextBlock Width="15" Height="27">
+                %
+            </TextBlock>
+            <AppBarSeparator/>
+        </StackPanel>
+        <MediaElement Width="600" x:Name="MediaPlayer"/>
+    </Grid>
+</Page>
