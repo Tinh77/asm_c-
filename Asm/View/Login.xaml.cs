@@ -24,7 +24,7 @@ namespace Asm.View
 {
     public sealed partial class Login : ContentDialog
     {
-        private static string valLogin = "TinhNhi";
+        private static string valLogin = "PageLoad";
         public Login()
         {
             this.InitializeComponent();
@@ -60,11 +60,7 @@ namespace Asm.View
                 StorageFolder folder = ApplicationData.Current.LocalFolder;
                 StorageFile file = await folder.CreateFileAsync("token.txt", CreationCollisionOption.ReplaceExisting);
                 await FileIO.WriteTextAsync(file, responseContent);
-
-                var dialog = new Windows.UI.Popups.MessageDialog("Chào mừng bạn đã đến với app của chúng tôi !");
-                dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
-                dialog.CancelCommandIndex = 1;
-                await dialog.ShowAsync();
+                
                 var frame = Window.Current.Content as Frame;
                 frame.Navigate(typeof(MainPage), valLogin);
 

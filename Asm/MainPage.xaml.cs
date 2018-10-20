@@ -41,7 +41,7 @@ namespace Asm
 
         private async void CheckAuthentication()
         {
-            
+
             // trường hợp chưa có token key trong hệ thống.
             if (Service.ApiHandle.TOKEN_STRING == null)
             {
@@ -55,47 +55,29 @@ namespace Asm
                         TokenResponse token = JsonConvert.DeserializeObject<TokenResponse>(fileContent);
                         Service.ApiHandle.TOKEN_STRING = token.token;
                     }
-                    catch (Exception e) {
+                    catch (Exception e)
+                    {
                         Debug.WriteLine(e.Message);
                     }
                 }
             }
             // Check tính hợp lệ của token của api.
-            if (Service.ApiHandle.TOKEN_STRING != null) {
-                if (await Service.ApiHandle.GetInformation()) {
+            if (Service.ApiHandle.TOKEN_STRING != null)
+            {
+                if (await Service.ApiHandle.GetInformation())
+                {
                     isLogged = true;
                     var frame = Window.Current.Content as Frame;
                     var currentPage = frame.Content as Page;
-                    var radioBtn = currentPage.FindName("RegisterBtn");
-                    var radioBtn1 = currentPage.FindName("LoginBtn");
-                    RadioButton btnRes = radioBtn as RadioButton;
-                    RadioButton btnLogin = radioBtn1 as RadioButton;
-
-                    var radioBtn2 = currentPage.FindName("MyAccount");
-                    var radioBtn3 = currentPage.FindName("MySong");
-                    var radioBtn4 = currentPage.FindName("NewSong");
-                    RadioButton btnMyAcc = radioBtn2 as RadioButton;
-                    RadioButton btnMySong = radioBtn3 as RadioButton;
-                    RadioButton btnNewSong = radioBtn4 as RadioButton;
-                    if (btnMyAcc != null && btnMySong != null && btnNewSong != null)
-                    {
-                        btnMyAcc.Visibility = Visibility.Visible;
-                        btnMySong.Visibility = Visibility.Visible;
-                        btnNewSong.Visibility = Visibility.Visible;
-                    }
-                    btnRes.Visibility = Visibility.Collapsed;
+                    var btnLogin = currentPage.FindName("LoginBtn") as RadioButton;
                     btnLogin.Visibility = Visibility.Collapsed;
-                    if(valLogin == "loginFalse")
-                    {
-                        var dialog = new Windows.UI.Popups.MessageDialog("Chào mừng bạn đã đến với app của chúng tôi !");
-                        dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
-                        dialog.CancelCommandIndex = 1;
-                        await dialog.ShowAsync();
-                    }
-                    
+                    var dialog = new Windows.UI.Popups.MessageDialog("Chào mừng bạn đã đến với app của chúng tôi !");
+                    dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
+                    dialog.CancelCommandIndex = 1;
+                    await dialog.ShowAsync();
                 }
             }
-            
+
             if (!isLogged)
             {
                 Login login = new Login();
@@ -152,19 +134,42 @@ namespace Asm
         }
 
 
-        private  async void SignOutClick(object sender, RoutedEventArgs e)
+        private async void SignOutClick(object sender, RoutedEventArgs e)
         {
 
             StorageFile storageFile = await ApplicationData.Current.LocalFolder.GetFileAsync("token.txt");
             if (storageFile != null)
             {
                 await storageFile.DeleteAsync();
+
+                var frame = Window.Current.Content as Frame;
+                var currentPage = frame.Content as Page;
+                var radioBtn1 = currentPage.FindName("LoginBtn");
+                RadioButton btnLogin = radioBtn1 as RadioButton;
+
+                var radioBtn2 = currentPage.FindName("MyAccount");
+                var radioBtn3 = currentPage.FindName("MySong");
+                var radioBtn4 = currentPage.FindName("LatestSong");
+                var radioBtn5 = currentPage.FindName("CreateSong");
+                var radioBtn6 = currentPage.FindName("SignOut");
+                RadioButton btnMyAcc = radioBtn2 as RadioButton;
+                RadioButton btnMySong = radioBtn3 as RadioButton;
+                RadioButton btnNewSong = radioBtn4 as RadioButton;
+                RadioButton btnLatestSong = radioBtn5 as RadioButton;
+                RadioButton btnSignOut = radioBtn6 as RadioButton;
+                btnMyAcc.Visibility = Visibility.Collapsed;
+                btnMySong.Visibility = Visibility.Collapsed;
+                btnNewSong.Visibility = Visibility.Collapsed;
+                btnLatestSong.Visibility = Visibility.Collapsed;
+                btnSignOut.Visibility = Visibility.Collapsed;
+                btnLogin.Visibility = Visibility.Visible;
                 var dialog = new Windows.UI.Popups.MessageDialog("Tạm biệt bạn. Hẹn gặp lại!");
                 dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
                 dialog.CancelCommandIndex = 1;
                 await dialog.ShowAsync();
             }
-            else {
+            else
+            {
                 Debug.WriteLine("Trong nay la khu vuc xoa file yoken.");
             }
         }
@@ -172,22 +177,28 @@ namespace Asm
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             valLogin = e.Parameter as string;
-            if(valLogin == "TinhNhi")
+            if (valLogin == "PageLoad")
             {
                 var frame = Window.Current.Content as Frame;
                 var currentPage = frame.Content as Page;
+                var radioBtn1 = currentPage.FindName("LoginBtn");
                 var radioBtn2 = currentPage.FindName("MyAccount");
                 var radioBtn3 = currentPage.FindName("MySong");
-                var radioBtn4 = currentPage.FindName("NewSong");
+                var radioBtn4 = currentPage.FindName("LatestSong");
+                var radioBtn5 = currentPage.FindName("CreateSong");
+                var radioBtn6 = currentPage.FindName("SignOut");
+                RadioButton btnLogin = radioBtn1 as RadioButton;
                 RadioButton btnMyAcc = radioBtn2 as RadioButton;
                 RadioButton btnMySong = radioBtn3 as RadioButton;
                 RadioButton btnNewSong = radioBtn4 as RadioButton;
-                if (btnMyAcc != null && btnMySong != null && btnNewSong != null)
-                {
-                    btnMyAcc.Visibility = Visibility.Visible;
-                    btnMySong.Visibility = Visibility.Visible;
-                    btnNewSong.Visibility = Visibility.Visible;
-                }
+                RadioButton btnLatestSong = radioBtn5 as RadioButton;
+                RadioButton btnSignOut = radioBtn6 as RadioButton;
+                btnMyAcc.Visibility = Visibility.Visible;
+                btnMySong.Visibility = Visibility.Visible;
+                btnNewSong.Visibility = Visibility.Visible;
+                btnLatestSong.Visibility = Visibility.Visible;
+                btnSignOut.Visibility = Visibility.Visible;
+                btnLogin.Visibility = Visibility.Collapsed;
             }
         }
     }

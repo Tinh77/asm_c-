@@ -31,17 +31,21 @@
     <AppXManifest Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-18T14:14:00.361</Modified>
+      <Modified>2018-10-20T05:03:46.757</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Asm.exe">
       <PackagePath>entrypoint\Asm.exe</PackagePath>
-      <Modified>2018-10-18T14:13:59.817</Modified>
+      <Modified>2018-10-20T05:03:45.924</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
       <Modified>2016-11-04T21:55:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tinh\.nuget\packages\microsoft.data.sqlite\1.1.1\lib\netstandard1.3\Microsoft.Data.Sqlite.dll">
+      <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
+      <Modified>2017-04-27T11:53:26.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.netcore.portable.compatibility\1.0.2\lib\netcore50\System.ComponentModel.DataAnnotations.dll">
       <PackagePath>System.ComponentModel.DataAnnotations.dll</PackagePath>
@@ -207,6 +211,10 @@
       <PackagePath>System.Private.Uri.dll</PackagePath>
       <Modified>2016-11-04T21:56:36.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tinh\.nuget\packages\sqlite\3.13.0\runtimes\win10-x86\nativeassets\uap10.0\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2016-10-18T14:37:00.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\.nuget\packages\system.appcontext\4.3.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
       <Modified>2016-11-04T21:55:34.000</Modified>
@@ -251,9 +259,9 @@
       <PackagePath>System.ComponentModel.TypeConverter.dll</PackagePath>
       <Modified>2016-11-04T21:55:44.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\system.data.common\4.1.0\lib\netstandard1.2\System.Data.Common.dll">
+    <AppxPackagedFile Include="C:\Users\Tinh\.nuget\packages\system.data.common\4.3.0\lib\netstandard1.2\System.Data.Common.dll">
       <PackagePath>System.Data.Common.dll</PackagePath>
-      <Modified>2016-06-11T16:13:32.000</Modified>
+      <Modified>2016-11-04T21:55:50.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\.nuget\packages\system.diagnostics.contracts\4.3.0\lib\netcore50\System.Diagnostics.Contracts.dll">
       <PackagePath>System.Diagnostics.Contracts.dll</PackagePath>
@@ -567,39 +575,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Asm.xr.xml">
       <PackagePath>Asm.xr.xml</PackagePath>
-      <Modified>2018-10-18T13:51:37.528</Modified>
+      <Modified>2018-10-19T13:29:02.751</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.593</Modified>
+      <Modified>2018-10-20T05:03:45.694</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.593</Modified>
+      <Modified>2018-10-20T05:03:45.696</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\LatestSong.xbf">
       <PackagePath>View\LatestSong.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.594</Modified>
+      <Modified>2018-10-20T05:03:45.696</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\ListSong.xbf">
       <PackagePath>View\ListSong.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.595</Modified>
+      <Modified>2018-10-20T05:03:45.697</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\Login.xbf">
       <PackagePath>View\Login.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.596</Modified>
+      <Modified>2018-10-20T05:03:45.697</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\MyAccount.xbf">
       <PackagePath>View\MyAccount.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.596</Modified>
+      <Modified>2018-10-20T05:03:45.698</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\Register.xbf">
       <PackagePath>View\Register.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.590</Modified>
+      <Modified>2018-10-20T05:03:45.692</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\SongForm.xbf">
       <PackagePath>View\SongForm.xbf</PackagePath>
-      <Modified>2018-10-18T14:13:59.598</Modified>
+      <Modified>2018-10-20T05:03:45.699</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -608,11 +616,11 @@
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-16T10:57:19.782</Modified>
+      <Modified>2018-10-20T04:51:48.331</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Core\Asm.exe">
       <PackagePath>Asm.exe</PackagePath>
-      <Modified>2018-10-18T14:14:00.330</Modified>
+      <Modified>2018-10-20T05:03:46.735</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

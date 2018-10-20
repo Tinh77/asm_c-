@@ -72,10 +72,12 @@ namespace Asm.View
                 {
                     foreach (var errorField in errResponse.error.Keys)
                     {
-                        TextBlock textBlock = this.FindName(errorField) as TextBlock;
-                        textBlock.Text = "* " + errResponse.error[errorField];
-                        textBlock.Visibility = Visibility.Visible;
-                        textBlock.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
+                        if (this.FindName(errorField) is TextBlock textBlock)
+                        {
+                            textBlock.Text = "* " + errResponse.error[errorField];
+                            textBlock.Visibility = Visibility.Visible;
+                            textBlock.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
+                        }
                     }
                 }
             }

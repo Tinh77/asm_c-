@@ -33,33 +33,33 @@
                             <TextBlock Text="Login" Margin="0, 3, 0, 0"/>
                         </StackPanel>
                     </RadioButton>
-                    <RadioButton Tag="MyAccount" x:Name="MyAccount" Visibility="Collapsed" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
+                    <RadioButton Tag="MyAccount" x:Name="MyAccount" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Symbol="ContactInfo" Margin="0, 0, 15, 0"/>
                             <TextBlock Text="My Account" Margin="0, 3, 0, 0"/>
                         </StackPanel>
                     </RadioButton>
-                    <RadioButton Tag="MySong" x:Name="MySong" Visibility="Collapsed" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
+                    <RadioButton Tag="MySong" x:Name="MySong" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Symbol="Favorite" Margin="0, 0, 15, 0"/>
                             <TextBlock Text="My Song" Margin="0, 3, 0, 0"/>
                         </StackPanel>
                     </RadioButton>
-                    <RadioButton Tag="LatestSong" x:Name="NewSong" Visibility="Collapsed" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
+                    <RadioButton Tag="LatestSong" x:Name="LatestSong"  Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Symbol="MusicInfo" Margin="0, 0, 15, 0"/>
                             <TextBlock Text="The Latest Song" Margin="0, 3, 0, 0"/>
                         </StackPanel>
-                    </RadioButton> 
-                    <RadioButton Tag="CreateSong" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
+                    </RadioButton>
+                    <RadioButton Tag="CreateSong" x:Name="CreateSong" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="RadioButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Symbol="Audio" Margin="0, 0, 15, 0"/>
                             <TextBlock Text="Create Song" Margin="0, 3, 0, 0"/>
                         </StackPanel>
                     </RadioButton>
-                    <RadioButton Tag="SignOut" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="SignOutClick">
+                    <RadioButton Tag="SignOut" x:Name="SignOut" Style="{ThemeResource TextBlockButtonStyle}" Margin="0, 0, 0, 10" Click="SignOutClick">
                         <StackPanel Orientation="Horizontal">
-                            <SymbolIcon Symbol="Accept" Margin="0, 0, 15, 0"/>
+                            <SymbolIcon Symbol="BlockContact" Margin="0, 0, 15, 0"/>
                             <TextBlock Text="Sign Out" Margin="0, 3, 0, 0"/>
                         </StackPanel>
                     </RadioButton>

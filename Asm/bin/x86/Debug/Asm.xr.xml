@@ -61,7 +61,6 @@
       <RootProperty Name="Style" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="IsChecked" />
       <RootEvent Name="Click" />
       <RootEvent Name="Checked" />

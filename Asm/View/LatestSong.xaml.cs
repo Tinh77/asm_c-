@@ -69,9 +69,14 @@ namespace Asm.View
             ObservableCollection<Song> song = JsonConvert.DeserializeObject<ObservableCollection<Song>>(content);
             foreach (var item in song)
             {
-                this.ArrayLatestSong.Add(item);
+                if (item != null)
+                {
+                    this.ArrayLatestSong.Add(item);
+                }
             }
         }
+
+
 
         private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
