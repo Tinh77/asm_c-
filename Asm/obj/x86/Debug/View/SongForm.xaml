@@ -15,13 +15,13 @@
         <ScrollViewer>
             <StackPanel Margin="20">
                 <TextBlock Text="SONG" FontSize="20" />
-                <TextBox x:ConnectionId='2' x:Name="NameSong" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your name" Header="Name Song" Margin="0 20 0 0"/>
+                <TextBox x:ConnectionId='2' x:Name="NameSong" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your name" Header="Name Song" Margin="0 20 0 0"                                    />
                 <TextBlock x:ConnectionId='3' x:Name="name" Visibility="Collapsed"/>
                 <TextBox x:ConnectionId='4' x:Name="Description" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your description" Header="Description" Margin="0 20 0 0" AcceptsReturn="True" Height="100"/>
                 <TextBlock x:ConnectionId='5' x:Name="description" Visibility="Collapsed"/>
-                <TextBox x:ConnectionId='6' x:Name="Singer" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your singer" Header="Singer" Margin="0 20 0 0"/>
+                <TextBox x:ConnectionId='6' x:Name="Singer" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your singer" Header="Singer" Margin="0 20 0 0"                                      />
                 <TextBlock x:ConnectionId='7' x:Name="singer" Visibility="Collapsed"/>
-                <TextBox x:ConnectionId='8' x:Name="Author" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your author" Header="Author" Margin="0 20 0 0"/>
+                <TextBox x:ConnectionId='8' x:Name="Author" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your author" Header="Author" Margin="0 20 0 0"                                      />
                 <TextBlock x:ConnectionId='9' x:Name="author" Visibility="Collapsed"/>
                 <TextBox x:ConnectionId='10' x:Name="ThumbnailURL" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your thumbnail" Header="Thumbnail URL" Margin="0 20 0 0"/>
                 <TextBlock x:ConnectionId='11' x:Name="thumbnail" Visibility="Collapsed"/>

@@ -36,6 +36,13 @@ namespace Asm.View
         private Song currentSong;
         private StorageFile thumbnailSong;
         private string currentUploadUrl;
+
+        private bool validName = false;
+        private bool validSinger = false;
+        private bool validAuthor = false;
+        private bool validThumbnail = false;
+        private bool IsValidate = false;
+
         public SongForm()
         {
             this.currentSong = new Song();
@@ -54,8 +61,8 @@ namespace Asm.View
             var httpResponse = ApiHandle.Create_Song(this.currentSong);
             if (httpResponse.Result.StatusCode == HttpStatusCode.Created)
             {
-                var dialog = new Windows.UI.Popups.MessageDialog("Bạn đã tạo mới bài hát thành công");
-                dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
+                var dialog = new Windows.UI.Popups.MessageDialog("You created a new song successfully");
+                dialog.Commands.Add(new Windows.UI.Popups.UICommand("Closed") { Id = 1 });
                 dialog.CancelCommandIndex = 1;
                 await dialog.ShowAsync();
             }
@@ -182,6 +189,37 @@ namespace Asm.View
             currentUploadUrl = await httpClient.GetStringAsync(Service.ApiHandle.GET_UPLOAD_URL);
             Debug.WriteLine("Upload url: " + currentUploadUrl);
             HttpUploadFile(currentUploadUrl, "myFile", "image/png");
+        }
+
+        private void song_name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            validName = Validate.ValidateinputTypeText(NameSong.Text, name);
+            CheckSubmitEnable();
+
+        }
+
+        private void song_singer_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            validSinger = Validate.ValidateinputTypeText(Singer.Text, singer);
+            CheckSubmitEnable();
+        }
+
+        private void song_author_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            validAuthor = Validate.ValidateinputTypeText(Author.Text, author);
+            CheckSubmitEnable();
+        }
+        
+        private void CheckSubmitEnable()
+        {
+            if (!validAuthor || !validSinger || !validThumbnail || !validName)
+            {
+                IsValidate = false;
+            }
+            else
+            {
+                IsValidate = true;
+            }
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Asm.View
     /// </summary>
     public sealed partial class MyAccount : Page
     {
+        private int choose;
         public MyAccount()
         {
             this.InitializeComponent();

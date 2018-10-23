@@ -36,14 +36,21 @@ namespace Asm.View
         private string currentUploadUrl;
         private StorageFile photo;
         private Member currentMember;
-
+        private bool resultFirstName = false;
+        private bool resultLastName = false;
+        private bool resultEmail = false;
+        private bool resultPassword = false;
+        private bool resultPhone = false;
+        private bool resultAddress = false;
+        private bool IsValidate = false;
 
         public Register1()
         {
             this.currentMember = new Member();
             this.InitializeComponent();
             BirthdayPicker.Date = DateTime.Now;
-;        }
+            CheckSubmitEnable();
+        }
 
         private async void Do_Register(object sender, TappedRoutedEventArgs e)
         {
@@ -59,6 +66,7 @@ namespace Asm.View
             var httpResponseMessage = ApiHandle.Sign_Up(this.currentMember);
             if (httpResponseMessage.Result.StatusCode == HttpStatusCode.Created)
             {
+                IsValidate = true;
                 var dialog = new Windows.UI.Popups.MessageDialog("Bạn đã tạo mới tài khoản thành công");
                 dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
                 dialog.CancelCommandIndex = 1;
@@ -214,6 +222,54 @@ namespace Asm.View
             Debug.WriteLine("Upload url: " + currentUploadUrl);
             HttpUploadFile(currentUploadUrl, "myFile", "image/png");
 
+        }
+
+        private void box_firstname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            resultFirstName = Validate.ValidateinputTypeName(FirstName.Text, firstName);
+            Debug.WriteLine(resultFirstName);
+            CheckSubmitEnable();
+        }
+
+        private void box_lastname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            resultLastName = Validate.ValidateinputTypeName(LastName.Text, lastName);
+            CheckSubmitEnable();
+        }
+
+        private void box_email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            resultEmail = Validate.ValidateinputTypeEmail(Email.Text, email);
+            CheckSubmitEnable();
+        }
+
+        private void pwd_password_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            resultPassword = Validate.ValidateinputTypePassword(Password.Password, password);
+            CheckSubmitEnable();
+        }
+
+        private void box_phone_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            resultPhone = Validate.ValidateinputTypePhone(Phone.Text, phone);
+            CheckSubmitEnable();
+        }
+
+        private void box_address_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            resultAddress = Validate.ValidateinputTypeText(Address.Text, address);
+            CheckSubmitEnable();
+        }
+        private void CheckSubmitEnable()
+        {
+            if (!resultAddress || !resultEmail || !resultFirstName || !resultLastName || !resultPassword || !resultPhone)
+            {
+                IsValidate = false;
+            }
+            else
+            {
+                IsValidate = true;
+            }
         }
     }
 }

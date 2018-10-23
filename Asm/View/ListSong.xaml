@@ -15,7 +15,7 @@
         </Grid.Background>
         <Pivot>
             <Pivot.Title>
-                <TextBlock Text="Danh sách bài hát của bạn" FontSize="20"/>
+                <TextBlock Text="Your song list" FontSize="20"/>
             </Pivot.Title>
             <PivotItem>
                 <Grid Margin="0,-37,0,-0.333">
@@ -28,7 +28,7 @@
                                             <ImageBrush ImageSource="{x:Bind thumbnail}"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
-                                    <StackPanel>
+                                    <StackPanel Margin="24,12,0,0">
                                         <TextBlock Text="{x:Bind name}" VerticalAlignment="Center" 
                                                Style="{ThemeResource BaseTextBlockStyle}"
                                                Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"/>
@@ -44,32 +44,45 @@
                 </Grid>
             </PivotItem>
         </Pivot>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Background="#FFDEDEDE" Height="25" Margin="0,0,0,44">
-            <TextBlock>
-                Now Playing:
-            </TextBlock>
-            <TextBlock x:Name="NowPlaying" Margin="10,0,0,0">
-            </TextBlock>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Background="#FFDEDEDE" Height="45">
-            <AppBarSeparator/>
-            <TextBlock x:Name="MinDuration" Margin="0 12 5 0"/>
-            <Slider x:Name="Progress" Height="15" Width="320"/>
-            <TextBlock x:Name="MaxDuration" Margin="5 12 0 0"/>
-            <AppBarSeparator/>
-            <AppBarButton Icon="Previous" Click="PlayBack" ToolTipService.ToolTip="Previous Song"/>
-            <AppBarButton Icon="Play" Click="PlayClick" ToolTipService.ToolTip="Play/Pause Song" x:Name="PlayButton"/>
-            <AppBarButton Icon="Next" Click="PlayNext" ToolTipService.ToolTip="Next Song"/>
-            <AppBarSeparator/>
-            <Slider x:Name="VolumeSlider" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" ValueChanged="VolumeSlider_ValueChanged" ToolTipService.ToolTip="Volume"/>
-            <TextBlock x:Name="volume" Width="28" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextAlignment="Right">
-                100
-            </TextBlock>
-            <TextBlock Width="15" Height="27">
-                %
-            </TextBlock>
-            <AppBarSeparator/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" Background="#FFDEDEDE" Height="80" Width="360">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="NowPlaying" Margin="12,0,0,0"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="12,0,0,0">
+                            <Border CornerRadius="5" Margin="0 0 10 0">
+                                <Image x:Name="Image_Song" Width="70" Height="70"/>
+                            </Border>
+                            <StackPanel>
+                                <TextBlock x:Name="Name_song" Margin="0, 10 , 0, 2"/>
+                                <TextBlock x:Name="Singer_song"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Background="#FFDEDEDE" Height="80" Width="1100">
+                <AppBarSeparator Margin="0 17"/>
+                <TextBlock x:Name="MinDuration" Margin="0 28 5 0"/>
+                <ProgressBar x:Name="Progress" Height="15" Width="320"></ProgressBar>
+                <TextBlock x:Name="MaxDuration" Margin="5 28 0 0"/>
+                <AppBarSeparator Margin="0 17"/>
+                <AppBarButton Icon="Previous" Click="PlayBack" ToolTipService.ToolTip="Previous Song" Margin="0 17"/>
+                <AppBarButton Icon="Play" Click="PlayClick" ToolTipService.ToolTip="Play/Pause Song" x:Name="PlayButton" Margin="0 17"/>
+                <AppBarButton Icon="Next" Click="PlayNext" ToolTipService.ToolTip="Next Song" Margin="0 17"/>
+                <AppBarSeparator Margin="0 17"/>
+                <Slider x:Name="VolumeSlider" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" ValueChanged="VolumeSlider_ValueChanged" ToolTipService.ToolTip="Volume"/>
+                <TextBlock x:Name="volume" Width="28" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextAlignment="Right">
+                   100
+                </TextBlock>
+                <TextBlock Width="15" Height="20">
+                   %
+                </TextBlock>
+                <AppBarSeparator Margin="0 17"/>
+            </StackPanel>
         </StackPanel>
         <MediaElement Width="600" x:Name="MediaPlayer"/>
+        
     </Grid>
 </Page>

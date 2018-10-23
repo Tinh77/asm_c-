@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-20T05:03:46.757</Modified>
+      <Modified>2018-10-23T15:13:51.823</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Asm.exe">
       <PackagePath>entrypoint\Asm.exe</PackagePath>
-      <Modified>2018-10-20T05:03:45.924</Modified>
+      <Modified>2018-10-23T15:13:46.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -575,39 +575,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Asm.xr.xml">
       <PackagePath>Asm.xr.xml</PackagePath>
-      <Modified>2018-10-19T13:29:02.751</Modified>
+      <Modified>2018-10-23T15:08:42.795</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.694</Modified>
+      <Modified>2018-10-23T15:13:45.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.696</Modified>
+      <Modified>2018-10-23T15:13:45.237</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\Home.xbf">
+      <PackagePath>View\Home.xbf</PackagePath>
+      <Modified>2018-10-23T15:13:45.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\LatestSong.xbf">
       <PackagePath>View\LatestSong.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.696</Modified>
+      <Modified>2018-10-23T15:13:45.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\ListSong.xbf">
       <PackagePath>View\ListSong.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.697</Modified>
+      <Modified>2018-10-23T15:13:45.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\Login.xbf">
       <PackagePath>View\Login.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.697</Modified>
+      <Modified>2018-10-23T15:13:45.243</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\MyAccount.xbf">
       <PackagePath>View\MyAccount.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.698</Modified>
+      <Modified>2018-10-23T15:13:45.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\Register.xbf">
       <PackagePath>View\Register.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.692</Modified>
+      <Modified>2018-10-23T15:13:45.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\SongForm.xbf">
       <PackagePath>View\SongForm.xbf</PackagePath>
-      <Modified>2018-10-20T05:03:45.699</Modified>
+      <Modified>2018-10-23T15:13:45.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -616,11 +620,11 @@
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-20T04:51:48.331</Modified>
+      <Modified>2018-10-23T15:08:53.145</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\Core\Asm.exe">
       <PackagePath>Asm.exe</PackagePath>
-      <Modified>2018-10-20T05:03:46.735</Modified>
+      <Modified>2018-10-23T15:13:51.795</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

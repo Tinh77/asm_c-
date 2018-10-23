@@ -439,6 +439,9 @@
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\Home.xbf">
+      <PackagePath>View\Home.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tinh\source\repos\Asm\Asm\bin\x86\Debug\View\LatestSong.xbf">
       <PackagePath>View\LatestSong.xbf</PackagePath>
     </AppxPackagedFile>

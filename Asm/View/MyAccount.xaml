@@ -22,7 +22,7 @@
                     <TextBlock Text="Email" Margin="0 20 0 0"/>
                     <TextBlock Text="Phone" Margin="0 20 0 0"/>
                     <TextBlock Text="Address" Margin="0 20 0 0"/>
-                    <TextBlock Text="Gender" Margin="0 20 0 0"/>
+                    <!--<TextBlock Text="Gender" Margin="0 20 0 0"/>-->
                     <TextBlock Text="Birthday" Margin="0 20 0 0"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical"  Margin="30 0 0 0">
@@ -30,7 +30,7 @@
                     <TextBlock x:Name="Email" Margin="0 20 0 0"/>
                     <TextBlock x:Name="Phone" Margin="0 20 0 0"/>
                     <TextBlock x:Name="Address" Margin="0 20 0 0"/>
-                    <TextBlock x:Name="Gender" Margin="0 20 0 0"/>
+                    <!--<TextBlock x:Name="Gender" Margin="0 20 0 0"/>-->
                     <TextBlock x:Name="Birthday" Margin="0 20 0 0"/>
                 </StackPanel>
             </StackPanel>

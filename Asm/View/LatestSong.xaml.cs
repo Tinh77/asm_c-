@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -76,8 +77,6 @@ namespace Asm.View
             }
         }
 
-
-
         private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
             StackPanel panel = sender as StackPanel;
@@ -113,7 +112,7 @@ namespace Asm.View
         {
             MediaPlayer.Stop();
             onPlay -= 1;
-            if (onPlay <0)
+            if (onPlay < 0)
             {
                 onPlay = this.ArrayLatestSong.Count - 1;
             }
@@ -137,8 +136,12 @@ namespace Asm.View
         private void LoadSong(Song currentSong)
         {
             this.NowPlaying.Text = "Loading";
+            Image_Song.Source = new BitmapImage(new Uri(currentSong.thumbnail));
             MediaPlayer.Source = new Uri(currentSong.link);
             this.NowPlaying.Text = currentSong.name + " - " + currentSong.singer;
+            Name_song.Text = currentSong.name;
+            Singer_song.Text = currentSong.singer;
+
         }
         private void Timer_Tick(object sender, EventArgs e)
         {

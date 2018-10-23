@@ -14,25 +14,25 @@
         </Grid.Background>
         <Pivot>
             <Pivot.Title>
-                <TextBlock Text="Danh sách bài hát mới nhất" FontSize="20"/>
+                <TextBlock Text="Latest song list" FontSize="20"/>
             </Pivot.Title>
             <PivotItem>
                 <Grid Margin="0,-37,0,-0.333">
-                    <ListView x:ConnectionId='12'                                                      x:Name="MenuList">
+                    <ListView x:ConnectionId='15'                                                      x:Name="MenuList">
                         <ListView.ItemTemplate>
                             <DataTemplate                         >
-                                <StackPanel x:ConnectionId='13' Padding="12" Orientation="Horizontal" Tag="{Binding}"                                                                     >
+                                <StackPanel x:ConnectionId='16' Padding="12" Orientation="Horizontal" Tag="{Binding}"                                                                     >
                                     <Ellipse Height="77" Width="77">
                                         <Ellipse.Fill>
-                                            <ImageBrush x:ConnectionId='16'                                 />
+                                            <ImageBrush x:ConnectionId='19'                                 />
                                         </Ellipse.Fill>
                                     </Ellipse>
                                     <StackPanel Margin="24,12,0,0">
-                                        <TextBlock x:ConnectionId='14'                      VerticalAlignment="Center" 
+                                        <TextBlock x:ConnectionId='17'                      VerticalAlignment="Center" 
                                                Style="{ThemeResource BaseTextBlockStyle}" 
                                                Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"
                                                 Margin="0,0,0,0"/>
-                                        <TextBlock x:ConnectionId='15'                        VerticalAlignment="Center"                                                
+                                        <TextBlock x:ConnectionId='18'                        VerticalAlignment="Center"                                                
                                                Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" 
                                                Margin="0,7,0,0"/>
                                     </StackPanel>
@@ -43,34 +43,45 @@
                 </Grid>
             </PivotItem>
         </Pivot>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Background="#FFDEDEDE" Height="25" Margin="0,0,0,44">
-            <TextBlock>
-                Now Playing:
-            </TextBlock>
-            <TextBlock x:ConnectionId='11' x:Name="NowPlaying" Margin="10,0,0,0">
-            </TextBlock>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Background="#FFDEDEDE" Height="45">
-            <AppBarSeparator/>
-            <TextBlock x:ConnectionId='3' x:Name="MinDuration" Margin="0 12 5 0"/>
-            <ProgressBar x:ConnectionId='4' x:Name="Progress" Height="15" Width="320"/>
-            <TextBlock x:ConnectionId='5' x:Name="MaxDuration" Margin="5 12 0 0"/>
-            <AppBarSeparator/>
-            <AppBarButton x:ConnectionId='6' Icon="Previous"                  ToolTipService.ToolTip="Previous Song"/>
-            <AppBarButton x:ConnectionId='7' Icon="Play"                   ToolTipService.ToolTip="Play/Pause Song" x:Name="PlayButton"/>
-            <AppBarButton x:ConnectionId='8' Icon="Next"                  ToolTipService.ToolTip="Next Song"/>
-            <AppBarSeparator/>
-            <Slider x:ConnectionId='9' x:Name="VolumeSlider" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36"                                          ToolTipService.ToolTip="Volume"/>
-            <TextBlock x:ConnectionId='10' x:Name="volume" Width="28" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextAlignment="Right">
-                100
-            </TextBlock>
-            <TextBlock Width="15" Height="27">
-                %
-            </TextBlock>
-            <AppBarSeparator/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" Background="#FFDEDEDE" Height="80" Width="360">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:ConnectionId='11' x:Name="NowPlaying" Margin="12,0,0,0"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="12,0,0,0">
+                            <Border CornerRadius="5" Margin="0 0 10 0">
+                                <Image x:ConnectionId='14' x:Name="Image_Song" Width="70" Height="70"/>
+                            </Border>
+                            <StackPanel>
+                                <TextBlock x:ConnectionId='12' x:Name="Name_song" Margin="0, 10 , 0, 2"/>
+                                <TextBlock x:ConnectionId='13' x:Name="Singer_song"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Background="#FFDEDEDE" Height="80" Width="1100">
+                <AppBarSeparator Margin="0 17"/>
+                <TextBlock x:ConnectionId='3' x:Name="MinDuration" Margin="0 28 5 0"/>
+                <ProgressBar x:ConnectionId='4' x:Name="Progress" Height="15" Width="320"></ProgressBar>
+                <TextBlock x:ConnectionId='5' x:Name="MaxDuration" Margin="5 28 0 0"/>
+                <AppBarSeparator Margin="0 17"/>
+                <AppBarButton x:ConnectionId='6' Icon="Previous"                  ToolTipService.ToolTip="Previous Song" Margin="0 17"/>
+                <AppBarButton x:ConnectionId='7' Icon="Play"                   ToolTipService.ToolTip="Play/Pause Song" x:Name="PlayButton" Margin="0 17"/>
+                <AppBarButton x:ConnectionId='8' Icon="Next"                  ToolTipService.ToolTip="Next Song" Margin="0 17"/>
+                <AppBarSeparator Margin="0 17"/>
+                <Slider x:ConnectionId='9' x:Name="VolumeSlider" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36"                                          ToolTipService.ToolTip="Volume"/>
+                <TextBlock x:ConnectionId='10' x:Name="volume" Width="28" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextAlignment="Right">
+                   100
+                </TextBlock>
+                <TextBlock Width="15" Height="20">
+                   %
+                </TextBlock>
+                <AppBarSeparator Margin="0 17"/>
+            </StackPanel>
         </StackPanel>
         <MediaElement x:ConnectionId='2' Width="600" x:Name="MediaPlayer"/>
-
     </Grid>
 </Page>
 

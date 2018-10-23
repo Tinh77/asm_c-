@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/image.jpg" Opacity="0.6"/>
+            <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/image.jpg" Opacity="0.6"/>
         </Grid.Background>
         <SplitView x:Name="MySplitView" IsPaneOpen="False" DisplayMode="CompactOverlay" CompactPaneLength="50" OpenPaneLength="250">
             <SplitView.Pane>

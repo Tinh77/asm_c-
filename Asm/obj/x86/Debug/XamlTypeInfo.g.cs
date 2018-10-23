@@ -189,31 +189,33 @@ namespace Asm.Asm_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[11];
+            _typeNameTable = new string[12];
             _typeNameTable[0] = "Asm.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Asm.View.LatestSong";
-            _typeNameTable[4] = "Asm.View.ListSong";
-            _typeNameTable[5] = "Asm.View.Login";
-            _typeNameTable[6] = "Windows.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[7] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[8] = "Asm.View.MyAccount";
-            _typeNameTable[9] = "Asm.View.Register1";
-            _typeNameTable[10] = "Asm.View.SongForm";
+            _typeNameTable[3] = "Asm.View.Home";
+            _typeNameTable[4] = "Asm.View.LatestSong";
+            _typeNameTable[5] = "Asm.View.ListSong";
+            _typeNameTable[6] = "Asm.View.Login";
+            _typeNameTable[7] = "Windows.UI.Xaml.Controls.ContentDialog";
+            _typeNameTable[8] = "Windows.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[9] = "Asm.View.MyAccount";
+            _typeNameTable[10] = "Asm.View.Register1";
+            _typeNameTable[11] = "Asm.View.SongForm";
 
-            _typeTable = new global::System.Type[11];
+            _typeTable = new global::System.Type[12];
             _typeTable[0] = typeof(global::Asm.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Asm.View.LatestSong);
-            _typeTable[4] = typeof(global::Asm.View.ListSong);
-            _typeTable[5] = typeof(global::Asm.View.Login);
-            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
-            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[8] = typeof(global::Asm.View.MyAccount);
-            _typeTable[9] = typeof(global::Asm.View.Register1);
-            _typeTable[10] = typeof(global::Asm.View.SongForm);
+            _typeTable[3] = typeof(global::Asm.View.Home);
+            _typeTable[4] = typeof(global::Asm.View.LatestSong);
+            _typeTable[5] = typeof(global::Asm.View.ListSong);
+            _typeTable[6] = typeof(global::Asm.View.Login);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
+            _typeTable[9] = typeof(global::Asm.View.MyAccount);
+            _typeTable[10] = typeof(global::Asm.View.Register1);
+            _typeTable[11] = typeof(global::Asm.View.SongForm);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -249,12 +251,13 @@ namespace Asm.Asm_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::Asm.MainPage(); }
-        private object Activate_3_LatestSong() { return new global::Asm.View.LatestSong(); }
-        private object Activate_4_ListSong() { return new global::Asm.View.ListSong(); }
-        private object Activate_5_Login() { return new global::Asm.View.Login(); }
-        private object Activate_8_MyAccount() { return new global::Asm.View.MyAccount(); }
-        private object Activate_9_Register1() { return new global::Asm.View.Register1(); }
-        private object Activate_10_SongForm() { return new global::Asm.View.SongForm(); }
+        private object Activate_3_Home() { return new global::Asm.View.Home(); }
+        private object Activate_4_LatestSong() { return new global::Asm.View.LatestSong(); }
+        private object Activate_5_ListSong() { return new global::Asm.View.ListSong(); }
+        private object Activate_6_Login() { return new global::Asm.View.Login(); }
+        private object Activate_9_MyAccount() { return new global::Asm.View.MyAccount(); }
+        private object Activate_10_Register1() { return new global::Asm.View.Register1(); }
+        private object Activate_11_SongForm() { return new global::Asm.View.SongForm(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -281,52 +284,59 @@ namespace Asm.Asm_XamlTypeInfo
                 xamlType = new global::Asm.Asm_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Asm.View.LatestSong
+            case 3:   //  Asm.View.Home
                 userType = new global::Asm.Asm_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_LatestSong;
+                userType.Activator = Activate_3_Home;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Asm.View.ListSong
+            case 4:   //  Asm.View.LatestSong
                 userType = new global::Asm.Asm_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_ListSong;
+                userType.Activator = Activate_4_LatestSong;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Asm.View.Login
+            case 5:   //  Asm.View.ListSong
+                userType = new global::Asm.Asm_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_ListSong;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Asm.View.Login
                 userType = new global::Asm.Asm_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_5_Login;
+                userType.Activator = Activate_6_Login;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Windows.UI.Xaml.Controls.ContentDialog
+            case 7:   //  Windows.UI.Xaml.Controls.ContentDialog
                 xamlType = new global::Asm.Asm_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  Windows.UI.Xaml.Controls.ContentControl
+            case 8:   //  Windows.UI.Xaml.Controls.ContentControl
                 xamlType = new global::Asm.Asm_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  Asm.View.MyAccount
+            case 9:   //  Asm.View.MyAccount
                 userType = new global::Asm.Asm_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_MyAccount;
+                userType.Activator = Activate_9_MyAccount;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  Asm.View.Register1
+            case 10:   //  Asm.View.Register1
                 userType = new global::Asm.Asm_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_Register1;
+                userType.Activator = Activate_10_Register1;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Asm.View.SongForm
+            case 11:   //  Asm.View.SongForm
                 userType = new global::Asm.Asm_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_SongForm;
+                userType.Activator = Activate_11_SongForm;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

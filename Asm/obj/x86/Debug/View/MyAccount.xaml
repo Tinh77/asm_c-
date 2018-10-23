@@ -14,7 +14,7 @@
         </Grid.Background>
         <StackPanel >
             <StackPanel>
-                <Image x:ConnectionId='8' x:Name="Avatar" HorizontalAlignment="Center" Margin="20" Width="100" Height="100"/>
+                <Image x:ConnectionId='7' x:Name="Avatar" HorizontalAlignment="Center" Margin="20" Width="100" Height="100"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical" Margin="100 0 0 0">
@@ -22,7 +22,7 @@
                     <TextBlock Text="Email" Margin="0 20 0 0"/>
                     <TextBlock Text="Phone" Margin="0 20 0 0"/>
                     <TextBlock Text="Address" Margin="0 20 0 0"/>
-                    <TextBlock Text="Gender" Margin="0 20 0 0"/>
+                    <!--<TextBlock Text="Gender" Margin="0 20 0 0"/>-->
                     <TextBlock Text="Birthday" Margin="0 20 0 0"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical"  Margin="30 0 0 0">
@@ -30,8 +30,8 @@
                     <TextBlock x:ConnectionId='3' x:Name="Email" Margin="0 20 0 0"/>
                     <TextBlock x:ConnectionId='4' x:Name="Phone" Margin="0 20 0 0"/>
                     <TextBlock x:ConnectionId='5' x:Name="Address" Margin="0 20 0 0"/>
-                    <TextBlock x:ConnectionId='6' x:Name="Gender" Margin="0 20 0 0"/>
-                    <TextBlock x:ConnectionId='7' x:Name="Birthday" Margin="0 20 0 0"/>
+                    <!--<TextBlock x:Name="Gender" Margin="0 20 0 0"/>-->
+                    <TextBlock x:ConnectionId='6' x:Name="Birthday" Margin="0 20 0 0"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

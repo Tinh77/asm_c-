@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -32,11 +33,28 @@ namespace Asm.View
         internal ObservableCollection<Song> ArrayListSong { get => listSong; set => listSong = value; }
 
         int _currentIndex = 0;
+
+        TimeSpan _position;
+
+        DispatcherTimer _timer = new DispatcherTimer();
         public ListSong()
         {
             this.ArrayListSong = new ObservableCollection<Song>();
             this.InitializeComponent();
             GetListMySong();
+            this.VolumeSlider.Value = 100;
+            _timer.Interval = TimeSpan.FromMilliseconds(1000);
+            _timer.Tick += ticktock;
+            _timer.Start();
+        }
+
+        private void ticktock(object sender, object e)
+        {
+            MinDuration.Text = MediaPlayer.Position.Minutes + ":" + MediaPlayer.Position.Seconds;
+            Progress.Minimum = 0;
+            Progress.Maximum = MediaPlayer.NaturalDuration.TimeSpan.TotalSeconds;
+            MaxDuration.Text = MediaPlayer.NaturalDuration.TimeSpan.Minutes + ":" + MediaPlayer.NaturalDuration.TimeSpan.Seconds;
+            Progress.Value = MediaPlayer.Position.TotalSeconds;
         }
 
         private async void GetListMySong()
@@ -54,10 +72,11 @@ namespace Asm.View
 
         private void Click_MySong(object sender, TappedRoutedEventArgs e)
         {
-           StackPanel panel = sender as StackPanel;
-           Song song = panel.Tag as Song;
-           _currentIndex = this.MyListSong.SelectedIndex;
-            
+            StackPanel panel = sender as StackPanel;
+            Song song = panel.Tag as Song;
+            _currentIndex = this.MyListSong.SelectedIndex;
+            LoadSong(song);
+            PlaySong();
         }
 
         private void PlaySong()
@@ -111,11 +130,14 @@ namespace Asm.View
             PlaySong();
             MyListSong.SelectedIndex = _currentIndex;
         }
-        private void LoadSong(Entity.Song currentSong)
+        private void LoadSong(Song currentSong)
         {
             this.NowPlaying.Text = "Loading";
+            Image_Song.Source = new BitmapImage(new Uri(currentSong.thumbnail));
             MediaPlayer.Source = new Uri(currentSong.link);
             this.NowPlaying.Text = currentSong.name + " - " + currentSong.singer;
+            Name_song.Text = currentSong.name;
+            Singer_song.Text = currentSong.singer;
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -124,7 +146,6 @@ namespace Asm.View
                 Progress.Minimum = 0;
                 Progress.Maximum = MediaPlayer.NaturalDuration.TimeSpan.TotalSeconds;
                 Progress.Value = MediaPlayer.Position.TotalSeconds;
-
             }
         }
 
@@ -137,7 +158,6 @@ namespace Asm.View
                 this.volume.Text = vol.Value.ToString();
             }
         }
-
 
     }
 }

@@ -14,30 +14,28 @@
         <ScrollViewer>
             <StackPanel Margin="30 20 30 20">
                 <TextBlock Text="Register" FontSize="20" Margin="0 20 0 30"/>
-                <TextBox x:Name="Email" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your email" Header="Email" Margin="0 20 0 0"/>
+                <TextBox x:Name="Email" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your email" Header="Email" Margin="0 20 0 0" TextChanged="box_email_TextChanged"/>
                 <TextBlock x:Name="email" Visibility="Collapsed" Margin="5 20 0 0"/>
-                <PasswordBox x:Name="Password" HorizontalAlignment="Left" Width="440"  PlaceholderText="Please enter your password" Header="Password" Margin="0 20 0 0"/>
+                <PasswordBox x:Name="Password" HorizontalAlignment="Left" Width="440"  PlaceholderText="Please enter your password" Header="Password" Margin="0 20 0 0" PasswordChanged="pwd_password_PasswordChanged"/>
                 <TextBlock x:Name="password" Visibility="Collapsed" Margin="5 20 0 0" />
                 <PasswordBox x:Name="ConfirmPassword" HorizontalAlignment="Left" Width="440"  PlaceholderText="Please enter your confirm password" Header="Confirm Password" Margin="0 20 0 0"/>
                 <TextBlock x:Name="ErrorConfirmPassword" />
                 <StackPanel>
                     
                 </StackPanel>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="0.5*"></RowDefinition>
-                        <RowDefinition Height="0.5*"></RowDefinition>
-                    </Grid.RowDefinitions>
+                <Grid Margin="0, 20, 0 , 0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
-                        <TextBox x:Name="FirstName"  PlaceholderText="Please enter your first name" Header="First Name" Margin="0, 0, 30, 0"/>
-                        <TextBlock x:Name="firstName" Visibility="Collapsed" Margin="5 20 0 0"/>
-                        <TextBox x:Name="LastName"  PlaceholderText="Please enter your last name" Header="Last Name" Grid.Row="0" Grid.Column="1"/>
-                        <TextBlock x:Name="lastName" Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="5 20 0 0"/>
-                    </StackPanel>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="FirstName" Header="First Name" Grid.Row="0"  Grid.Column="0" PlaceholderText="Enter your firstname" Margin="0, 0, 10, 0" TextChanged="box_firstname_TextChanged"/>
+                    <TextBlock x:Name="firstName" Grid.Row="1" Grid.Column="0" Foreground="Red"/>
+                    <TextBox x:Name="LastName" Header="Last Name" Grid.Row="0" Grid.Column="1" PlaceholderText="Enter your lastname" TextChanged="box_lastname_TextChanged"/>
+                    <TextBlock x:Name="lastName" Grid.Row="1" Grid.Column="1" Foreground="Red"/>
                 </Grid>
                 <TextBox x:Name="AvatarUrl" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your avatar link" Header="Avatar Link" Margin="0 20 0 0"/>
                 <TextBlock x:Name="avatar" Visibility="Collapsed" Margin="5 20 0 0"/>
@@ -46,9 +44,9 @@
                     <Button Content="Capture Your Photo" Margin="0, 20, 20 , 0" Click="Choose_Image"/>
                     <Button Content="Get Your Image From File" Margin="0, 20, 0 , 0" Click="Get_Image_File"/>
                 </StackPanel>
-                <TextBox x:Name="Phone" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your phone" Header="Phone Number" Margin="0, 20, 0 , 0"/>
+                <TextBox x:Name="Phone" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your phone" Header="Phone Number" Margin="0, 20, 0 , 0" TextChanged="box_phone_TextChanged"/>
                 <TextBlock x:Name="phone" Visibility="Collapsed" Margin="5 20 0 0"/>
-                <TextBox x:Name="Address" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your address" Header="Address" AcceptsReturn="True" Height="100" Margin="0 20 0 0"/>
+                <TextBox x:Name="Address" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your address" Header="Address" AcceptsReturn="True" Height="100" Margin="0 20 0 0" TextChanged="box_address_TextChanged"/>
                 <TextBlock x:Name="address" Visibility="Collapsed" Margin="5 20 0 0"/>
                 <TextBox x:Name="Introduction" HorizontalAlignment="Left" Width="440" PlaceholderText="Please enter your introduction" Header="Introduction" AcceptsReturn="True" Height="100" Margin="0 20 0 0"/>
                 <TextBlock x:Name="introduction" Visibility="Collapsed" Margin="5 20 0 0"/>

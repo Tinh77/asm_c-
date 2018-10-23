@@ -71,8 +71,8 @@ namespace Asm
                     var currentPage = frame.Content as Page;
                     var btnLogin = currentPage.FindName("LoginBtn") as RadioButton;
                     btnLogin.Visibility = Visibility.Collapsed;
-                    var dialog = new Windows.UI.Popups.MessageDialog("Chào mừng bạn đã đến với app của chúng tôi !");
-                    dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
+                    var dialog = new Windows.UI.Popups.MessageDialog("Welcome to our app!");
+                    dialog.Commands.Add(new Windows.UI.Popups.UICommand("Closed") { Id = 1 });
                     dialog.CancelCommandIndex = 1;
                     await dialog.ShowAsync();
                 }
@@ -104,6 +104,7 @@ namespace Asm
             switch (radio.Tag.ToString())
             {
                 case "Home":
+                    this.MainFrame.Navigate(typeof(View.Home));
                     break;
                 case "Register":
                     this.MainFrame.Navigate(typeof(View.Register1));
@@ -163,8 +164,8 @@ namespace Asm
                 btnLatestSong.Visibility = Visibility.Collapsed;
                 btnSignOut.Visibility = Visibility.Collapsed;
                 btnLogin.Visibility = Visibility.Visible;
-                var dialog = new Windows.UI.Popups.MessageDialog("Tạm biệt bạn. Hẹn gặp lại!");
-                dialog.Commands.Add(new Windows.UI.Popups.UICommand("Đóng") { Id = 1 });
+                var dialog = new Windows.UI.Popups.MessageDialog("Goodbye. See you again!");
+                dialog.Commands.Add(new Windows.UI.Popups.UICommand("Closed") { Id = 1 });
                 dialog.CancelCommandIndex = 1;
                 await dialog.ShowAsync();
             }
